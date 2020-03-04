@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Picture Style Stealer</title>
+		<script type="text/javascript" src="scripts/vectorscope.js"></script>
+		<script type="text/javascript" src="scripts/waveform.js"></script>
+		<script type="text/javascript" src="scripts/parade.js"></script>
+		<script type="text/javascript" src="scripts/histgram.js"></script>
+		<script type="text/javascript" src="scripts/palette.js"></script>
+		<style type="text/css"></style>
+	</head>
+	<body>
+		<input type="file" id="file">
+		<img src="" id="img" height="800">
+		<div id="palette"></div>
+		<canvas id="vectorscope" data-vectorscope="" width="512" height="256"></canvas>
+		<canvas id="waveform" data-vectorscope="" width="512" height="256"></canvas>
+		<canvas id="parade" data-vectorscope="" width="512" height="256"></canvas>
+		<canvas id="histgram" data-vectorscope="" width="512" height="256"></canvas>
+
+		<script type="text/javascript">
+			var canvas_v = document.getElementById('vectorscope'),
+				canvas_w = document.getElementById('waveform'),
+				canvas_p = document.getElementById('parade'),
+				canvas_h = document.getElementById('histgram'),
+				div_p = document.getElementById('palette'),
+				waveform = new Waveform(canvas_w),
+				vectorscope = new Vectorscope(canvas_v),
+				parade = new Parade(canvas_p),
+				histgram = new Histgram(canvas_h),
+				palette = new Palette(div_p),
+				img = new Image();
+
+			img.addEventListener('load', function() {
+				vectorscope.setImage(img);
+				vectorscope.refresh();
+				waveform.setImage(img);
+				waveform.refresh();
+				parade.setImage(img);
+				parade.refresh();
+				histgram.setImage(img);
+				histgram.refresh();
+				
+			}, false);
+			
+			var imgEle = document.getElementById('img');
+			var fileEle = document.getElementById('file');
+			
+			fileEle.onchange = function(e) {
+				var file1 = e.target.files[0];
+				var reader = new FileReader;
+				var url2 = reader.readAsDataURL(file1);
+				reader.onload = function() {
+					imgEle.src = reader.result;
+					img.src = reader.result;
+				}
+			}
+		</script>
+	</body>
+</html>
+
