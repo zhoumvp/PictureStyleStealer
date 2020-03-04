@@ -109,7 +109,7 @@ function Parade(argCanvas, argOptions) {
 
 	function init() {
 		hudDraw();
-		hudRedraw();
+		// hudRedraw();
 	}
 	init();
 }

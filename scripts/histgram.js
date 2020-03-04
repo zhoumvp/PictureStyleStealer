@@ -141,7 +141,7 @@ function Histgram(argCanvas, argOptions) {
 
 	function init() {
 		hudDraw();
-		hudRedraw();
+		// hudRedraw();
 	}
 	init();
 }

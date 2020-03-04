@@ -114,7 +114,7 @@ function Waveform(argCanvas, argOptions) {
 
 	function init() {
 		hudDraw();
-		hudRedraw();
+		// hudRedraw();
 	}
 
 	init();

@@ -8,16 +8,36 @@
 		<script type="text/javascript" src="scripts/parade.js"></script>
 		<script type="text/javascript" src="scripts/histgram.js"></script>
 		<script type="text/javascript" src="scripts/palette.js"></script>
-		<style type="text/css"></style>
+		<script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="scripts/bootstrap.bundle.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<input type="file" id="file">
-		<img src="" id="img" height="800">
-		<div id="palette"></div>
-		<canvas id="vectorscope" data-vectorscope="" width="512" height="256"></canvas>
-		<canvas id="waveform" data-vectorscope="" width="512" height="256"></canvas>
-		<canvas id="parade" data-vectorscope="" width="512" height="256"></canvas>
-		<canvas id="histgram" data-vectorscope="" width="512" height="256"></canvas>
+		<div class="container">
+			<div class="row">
+				<input class="col-8" type="url" id="image-url" placeholder="请输入需要分析图片的链接">
+				<input class="col" type="file" id="file">
+				<button class="col">分析图片</button>
+			</div>	
+			<div class="row">
+				<div class = "col">
+					<img src="" id="img" class="rounded" width=100%/>
+				</div>
+					<div id="palette" class = "col">
+					</div>
+			</div>
+			<div class="row">
+				<canvas id="waveform" class="col"></canvas>
+				<canvas id="vectorscope" class="col"></canvas>
+			</div>
+			<div class="row">
+				<canvas id="parade" class="col"></canvas>
+				<canvas id="histgram" class="col"></canvas>
+			</div>
+		</div>
+		
 
 		<script type="text/javascript">
 			var canvas_v = document.getElementById('vectorscope'),

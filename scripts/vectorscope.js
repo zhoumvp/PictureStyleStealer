@@ -112,6 +112,7 @@ function Vectorscope(argCanvas, argOptions) {
 	function vectorscope() {
 		bufCanvas.width = canvas.width;
 		bufCanvas.height = canvas.height;
+		console.log(bufCanvas.width,bufCanvas.height)
 
 		// buffer.clearRect(0, 0, bufCanvas.width, bufCanvas.height);
 		buffer.putImageData(hud, 0, 0);
@@ -152,7 +153,7 @@ function Vectorscope(argCanvas, argOptions) {
 
 	function init() {
 		hudDraw();
-		hudRedraw();
+		// hudRedraw();
 	}
 	init();
 }

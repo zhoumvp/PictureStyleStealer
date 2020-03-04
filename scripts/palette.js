@@ -13,7 +13,7 @@ function Palette(argCanvas, argOptions) {
         div_p.innerHTML ='';
 
         quality = 10;
-        colorCount = 8,
+        colorCount = 5,
         pixels = img.getImageData(0, 0, image.width, image.height).data,
         pixelCount = image.width*image.height;
         
@@ -50,27 +50,33 @@ function Palette(argCanvas, argOptions) {
         var shadowPalette = cmap.palette();
         var paletteHTML ='';
 
-        paletteHTML += '<div id="shadow">shadow'
+        paletteHTML += '<div class="row">'
+        paletteHTML += '<div id="shadow" class="col">'
+        paletteHTML += '<div class="row">'
         shadowPalette.forEach((color)=>{
-            paletteHTML += '<div style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');width:100px;height:100px"></div>';
+            paletteHTML += '<div class = "col" style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');height:50px"></div>';
         });
-        paletteHTML += '</div>'
+        paletteHTML += '</div></div>'
+        
 
-        paletteHTML += '<div id="midtone">midtone'
+        paletteHTML += '<div id="midtone" class="col">'
+        paletteHTML += '<div class="row">'
         midtonePalette.forEach((color)=>{
-            paletteHTML += '<div style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');width:100px;height:100px"></div>';
+            paletteHTML += '<div class = "col" style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');height:50px"></div>';
         });
-        paletteHTML += '</div>'
+        paletteHTML += '</div></div>'
 
-        paletteHTML += '<div id="highlight">highlight'
+        paletteHTML += '<div id="highlight" class="col">'
+        paletteHTML += '<div class="row">'
         higtlightPalette.forEach((color)=>{
-            paletteHTML += '<div style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');width:100px;height:100px"></div>';
+            paletteHTML += '<div class = "col" style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');height:50px"></div>';
         });
-        paletteHTML += '</div>'
+        paletteHTML += '</div></div></div>'
 
-        paletteHTML += '<div id="overall">overall'
+
+        paletteHTML += '<div class ="row" id="overall">'
         allPalette.forEach((color)=>{
-            paletteHTML += '<div style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');width:100px;height:100px"></div>';
+            paletteHTML += '<div class = "col" style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');height:50px"></div>';
         });
         paletteHTML += '</div>'
 
