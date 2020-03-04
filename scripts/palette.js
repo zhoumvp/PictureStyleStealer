@@ -10,6 +10,8 @@ function Palette(argCanvas, argOptions) {
     }
     
     function palette() {
+        div_p.innerHTML ='';
+
         quality = 10;
         colorCount = 8,
         pixels = img.getImageData(0, 0, image.width, image.height).data,
@@ -71,8 +73,6 @@ function Palette(argCanvas, argOptions) {
             paletteHTML += '<div style="background-color:rgb('+color[0]+','+color[1]+','+color[2]+');width:100px;height:100px"></div>';
         });
         paletteHTML += '</div>'
-
-
 
         div_p.innerHTML += paletteHTML;
         console.log('test');
